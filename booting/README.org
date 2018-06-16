@@ -31,8 +31,25 @@ offset. Since jump offsets start from the address of the next
 instruction onwards, 3 bytes are jumped back again to *e9* long jump
 instruction.
 
-The code above has been saved in =boot_sector.bin= file. Youo can
+** Running the code 
+
+The code above has been saved in =boot_sector.bin= file. You can
 write your own with a binary editor.
+
+A CPU emulator that behaves like a specific architecture such as
+Bochs, Qemu etc can be used to test programs.
+
+Install Qemu and run the program using =qemu boot_sector.bin=. If that
+command doesn't work, try =qemu-system-x86_64 boot_sector.bin= (for
+64-bit systems) or =qemu-system-i386 boot_sector.bin= (for 32-bit
+systems).
+
+#+caption: Boot Sector with Infinite Loop
+#+name: fig:boot-sect
+[[./img/boot-sect-infinite-loop.png]]
+
+The above window pops up. Nothing happens further because the system
+is in an infinite loop.
 
 ** Viewing the master boot record in your system
 
