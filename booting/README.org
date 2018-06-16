@@ -33,7 +33,7 @@ jump instruction.
 
 *** Running the code 
 
-The code above has been saved in =boot_sector.bin= [[https://github.com/SanjanaSunil/OS/blob/master/booting/boot_sector.bin][file]]. You can
+The code above has been saved in [[https://github.com/SanjanaSunil/OS/blob/master/booting/boot_sector.bin][boot_sector.bin]]. You can
 write your own using a binary editor.
 
 A CPU emulator that behaves like a specific architecture such as
