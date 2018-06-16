@@ -2,52 +2,7 @@
 
 Building an operating system. 
 
-* Booting
+* References
 
-The OS is a file located on a storage device (such as a hard disk)
-booted by the BIOS on starting a computer. In order to do this, the
-BIOS searches the first sector, known as the /boot sector/, usually
-512 bytes. To ensure that the file is an operating system and not
-data, the boot sector looks at the last two bytes of the sector. If
-the last two bytes are *0xaa55*, it is an indicator that the file is
-an OS and the BIOS loads it into the memory and instructs the CPU to
-begin executing. 
-
-Here is a simple example of code (hex encoding) for a boot sector:
-
-#+BEGIN_SRC
-e9 fd ff 00 00 00 00 00 00 00 00 00 00 00 00 00
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-; 29 more lines of 16 bytes of zeroes each (making 512 bytes in total)
-00 00 00 00 00 00 00 00 00 00 00 00 00 00 55 aa
-#+END_SRC
-
-Note how the last two bytes make up the signature of the boot sector
-that indicates it's an OS. Be careful - the x86 instruction set
-architecture followed here is [[https://stackoverflow.com/questions/5185551/why-is-x86-little-endian][little endian]].
-
-The first three bytes *e9 fd ff* indicates an infinite loop - a jump
-that jumps to itself.
-+ *e9* is opcode for =jmp= instruction.  
-+ The number *0xfffd* is -3 in decimal (signed 2's complement) and is
-  the offset. Since jump offsets start from the address of the next
-  instruction onwards, 3 bytes are jumped back again to *e9* long jump
-  instruction.
-
-Try running the following command on the terminal to view the boot
-sector in Linux:
-
-#+BEGIN_SRC
-sudo dd if=/dev/sda bs=512 count=1 | hexdump -C
-#+END_SRC
-
-Note that the last two bytes end in the number *0xaa55*!
-
- 
-
-
-
-
-
- 
-
++ [[https://www.cs.bham.ac.uk/~exr/lectures/opsys/10_11/lectures/os-dev.pdf][Writing a Simple Operating System - from Scratch]]
++ [[https://github.com/cfenollosa/os-tutorial][OS Tutorial]]
