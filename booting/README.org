@@ -79,8 +79,8 @@ in assembly language to make things easier.
    =qemu-system-x86_64 new_boot_sector.bin=.
 
 =new_boot_sector.bin= has the machine language code translated from
-assembly using NASM. /Compare =new_boot_sector.bin= and
-=boot_sector.bin=. Do you see any differences?/
+assembly using NASM. /Compare new_boot_sector.bin and
+boot_sector.bin. Do you see any differences?/
 
 *** Viewing the master boot record in your system
 
