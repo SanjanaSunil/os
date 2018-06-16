@@ -59,7 +59,7 @@ something else?/
 Using machine languuage can be tedious. The same code can be written
 in assembly language to make things easier.
 
-1. Create a [[./boot_sector.asm][boot-sector.asm]] file with the following assembly code in it:
+1. Create a [[./boot_sector.asm][boot_sector.asm]] file with the following assembly code in it:
 
    #+BEGIN_SRC nasm 
    loop:                     ; Define a 'loop' label 
@@ -79,7 +79,8 @@ in assembly language to make things easier.
    =qemu-system-x86_64 new_boot_sector.bin=.
 
 =new_boot_sector.bin= has the machine language code translated from
-assembly using NASM.
+assembly using NASM. /Compare =new_boot_sector.bin= and
+=boot_sector.bin=. Do you see any differences?/
 
 *** Viewing the master boot record in your system
 
