@@ -54,6 +54,33 @@ is in an infinite loop.
 /What happens if you change the last two bytes of the boot sector to
 something else?/
 
+*** Coding with assembly language
+
+Using machine languuage can be tedious. The same code can be written
+in assembly language to make things easier.
+
+1. Create a [[./boot_sector.asm][boot-sector.asm]] file with the following assembly code in it:
+
+   #+BEGIN_SRC nasm 
+   loop:                     ; Define a 'loop' label 
+       jmp loop              
+
+   times 510-($-$$) db 0     ; Continue filling with zeroes (db 0) until the 510th byte   
+
+   dw 0xaa55                 ; Remaining 2 bytes is 0xaa55 indicating it is a boot sector to BIOS
+   #+END_SRC
+
+2. Install [[https://www.nasm.us/][NASM]].
+ 
+3. Compile boot_sector.asm to machine language using the command =nasm
+   boot_sector.asm -f bin -o new_boot_sector.bin=.
+
+4. Run the code using =qemu new_boot_sector.bin= or
+   =qemu-system-x86_64 new_boot_sector.bin=.
+
+=new_boot_sector.bin= has the machine language code translated from
+assembly using NASM.
+
 *** Viewing the master boot record in your system
 
 Try running the command given below on the terminal to view the boot
