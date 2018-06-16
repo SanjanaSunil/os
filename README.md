@@ -1,2 +1,0 @@
-# OS
-Operating System basics
