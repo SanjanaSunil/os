@@ -33,7 +33,7 @@ instruction.
 
 ** Running the code 
 
-The code above has been saved in =boot_sector.bin= file. You can
+The code above has been saved in =[[https://github.com/SanjanaSunil/OS/blob/master/booting/boot_sector.bin][boot_sector.bin]]= file. You can
 write your own with a binary editor.
 
 A CPU emulator that behaves like a specific architecture such as
@@ -49,7 +49,10 @@ systems).
 [[./img/boot-sect-infinite-loop.png]]
 
 The above window pops up. Nothing happens further because the system
-is in an infinite loop.
+is in an infinite loop. 
+
+What happens if you change the last two bytes of the boot sector to
+something else?
 
 ** Viewing the master boot record in your system
 
