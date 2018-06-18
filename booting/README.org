@@ -56,7 +56,7 @@ something else?/
 
 *** Coding with assembly language
 
-Using machine languuage can be tedious. The same code can be written
+Using machine language can be tedious. The same code can be written
 in assembly language to make things easier.
 
 1. Create a [[./boot_sector.asm][boot_sector.asm]] file with the following assembly code in it:
