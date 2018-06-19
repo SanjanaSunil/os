@@ -1,13 +1,20 @@
 ** Booting
 
+The BIOS (Basic Input Output System) software is the code that is
+first run when the computer is turned on. It performs a power-on
+self-test (POST) - identifying hardware devices such as the CPU, mouse
+etc.
+ 
 The OS is a file located on a storage device (such as a hard disk)
 booted by the BIOS on starting a computer. In order to do this, the
 BIOS searches the first sector, known as the /boot sector/, usually
 512 bytes. To ensure that the file is an operating system and not
 data, the boot sector looks at the last two bytes of the sector. If
 the last two bytes is the number *0xaa55*, it is an indicator that the
-file is an OS and the BIOS loads it into the memory and instructs the
-CPU to begin executing.
+file is an OS. 
+
+When a boot sector is found it loaded into the RAM at memory address
+=0x0000:0x7c00=.
 
 *** Example code of a boot sector 
 
