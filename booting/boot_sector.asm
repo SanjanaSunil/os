@@ -1,7 +1,6 @@
 ; NASM
  
-loop:                     ; Define a 'loop' label 
-       jmp loop              
+jmp $
 
 times 510-($-$$) db 0     ; Continue filling with zeroes (db 0) until the 510th byte
 			  ; $ refers to current address of statement 
